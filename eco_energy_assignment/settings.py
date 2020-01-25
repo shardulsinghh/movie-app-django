@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'movieapp',
-    'movieapp-frontend'
 ]
 
 MIDDLEWARE = [
@@ -79,7 +78,7 @@ WSGI_APPLICATION = 'eco_energy_assignment.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'movi_db',
+        'NAME': 'movies_db',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',

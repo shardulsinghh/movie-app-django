@@ -17,41 +17,31 @@ from movieapp.api.serializers import MovieSerializer
  
 
 def foo():
-    print("FOO")
     with open('moviedata.json') as data_file:
         data = json.load(data_file)
     
 
-    with open('genre.json') as data_file:
+    with open('db.json') as data_file:   #db.json has been generated from the provided input data
         genredata = json.load(data_file)
-    print(genredata)
-    genrelist = []
     genrekey = {}
     for genre in genredata:
-
         fields = genre["fields"]
         genrekey[fields["title"]] = genre["pk"]
+        genreObj = Genre(title=fields["title"])
+        genreObj.save()
 
-    # print(genrekey)
 
-    # print("Data PRinted")
-    # print(type(data))
     id = 1
     for movie in data:
-        # print("*****************                   ********************",movie)
         m = Movie( id = id, name = movie["name"], popularity= movie["99popularity"], director= movie["director"],imdb_score= movie["imdb_score"])
-        # m.genre.set( [Genre.objects.get(title=genrekey[x.strip()]) for x in movie["genre"]])
         for gen in movie["genre"]:
-            # print(gen.strip())
             genreObject = Genre.objects.get(title = gen.strip())
             m.save()
             genreObject.save()
             m.genre.add(genreObject)
 
         m.save()
+        print('Saved: ', movie['name'])
         id+=1
-
-        print('OUT FINE')
-    # print(Genre.objects.get(title='Adventure'))
 
 foo() 

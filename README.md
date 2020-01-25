@@ -5,10 +5,10 @@ Django React Application Documentation
 * Install dependancies for Django
 * Set up MySQLShell in background, using terminal or XAMPP
 * Specify Database PORT and Params in settings.py file
+* Run `python manage.py makemigrations`, if there are migrations to be made run `python manage.py migrate`
 * Run:
 `python dbload.py` \
 to populate Database (Only required to do once)
-* Run `python manage.py makemigrations`, if there are migrations to be made run `python manage.py migrate`
 * Run "python manage.py runserver" (App runs on localhost:8000, by default)
 * Create superuser using `python manage.py createsuperuser`
 

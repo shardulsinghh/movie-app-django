@@ -14,7 +14,7 @@ to populate Database (Only required to do once)
 
 ## Exposed APIs:
 
-# This build API exposes the following routes for CRUD operations on a MySQL database:
+### This build API exposes the following routes for CRUD operations on a MySQL database:
  - `/api` - `GET, POST` all objects and POST new objects on this path
  - `/api/:id` - `GET, POST, PUT, DELETE`,  Primary Key ID parameter passed into query string and allows us to get unique object from Database if exists
  `- /admin` - CRUD Operations on existing table values and Users, can be used to modify or update the Database
